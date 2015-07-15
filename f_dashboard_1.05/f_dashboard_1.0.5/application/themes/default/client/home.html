@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--DEV-ONLY-NOT-LOADED-DURING-RUNTIME-->
+<link href="../common/style/bootstrap.css" rel="stylesheet">
+<link href="../common/style/style.css" rel="stylesheet">
+<!--[onshow;block=head;when [visible.foo] == bar;comm]-->
+<!--DEV-ONLY-NOT-LOADED-DURING-RUNTIME-->
+</head>
+<!--HEAD - ONLOAD-->
+<!--[onload;file=../common/common.head.html;getbody;comm]-->
+<!--HEAD - ONLOAD-->
+<body>
+<!--HEADER SECTION - ONLOAD-->
+<!--[onload;file=../common/common.javascript.html;getbody;comm]-->
+<!--HEADER SECTION - ONLOAD-->
+<!--HEADER SECTION - ONLOAD-->
+<!--[onload;file=common_include_debug;getbody;comm]-->
+<!--HEADER SECTION - ONLOAD-->
+<!--HEADER SECTION - ONLOAD-->
+<!--[onload;file=common.header.html;getbody;comm]-->
+<!--HEADER SECTION - ONLOAD-->
+<!-- Main content starts -->
+<div class="content">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!--SIDE MENU - ONLOAD -->
+    <!--[onload;file=common.menu.html;getbody;comm]-->
+    <!--SIDE MENU - ONLOAD -->
+  </div>
+  <!-- Sidebar ends -->
+  <!-- Main bar -->
+  <div class="mainbar">
+    <!----------------------COMMON PAGE HEADING--------------------------------->
+    <!--[onload;file=common.heading.html;getbody;comm]-->
+    <!----------------------COMMON PAGE HEADING--------------------------------->
+    <!-- Matter -->
+    <div class="matter">
+      <!--WI_HEADING_BAR-->
+        <div class="headerbar">
+          <div class="widget headerbar-widget">
+            <div class="pull-left dashboard-user-picture"><img class="avatar-small" src="[conf.site_url;noerr]/files/avatars/[vars.my_avatar;onformat=runtime_check_avatar]" alt=""/></div>
+            <div class="headerbar-project-title pull-left">
+              <h3>[vars.my_name] - [lang.lang_welcome_back]</h3>
+            </div>
+            <div class="dashboard-user-group pull-right">
+              <label class="label label-default">[vars.my_group_name]</label>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      <!--WI_HEADING_BAR-->
+      <div class="container">
+        <!----------------------COMMON NOTICES--------------------------------->
+        <!--[onload;file=../common/common.notices.html;getbody;comm]-->
+        <!----------------------COMMON NOTICES--------------------------------->
+        <!--WI_STATS_TOP-->
+        <div class="row">
+          <!--client projects-->
+          <div class="col-lg-3 col-sm-6 col-xs-12 url-link" data-link="[conf.site_url]/client/projects">
+            <div class="box-content dashboard-top-stats display-table no-border">
+              <div class="col-xs-5 display-cell no-padding"> <i class="icon-folder-open dashboard-top-stats-icon bg-info"></i> </div>
+              <div class="col-xs-7 display-cell no-padding">
+                <div class="dashboard-top-stats-heading">[lang.lang_my_projects]</div>
+                <div class="dashboard-top-stats-value">[client_projects_count.all_projects;onformat=runtime_number]</div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <!--client projects-->
+          <!--client users-->
+          <div class="col-lg-3 col-sm-6 col-xs-12 url-link" data-link="[conf.site_url]/client/users">
+            <div class="box-content dashboard-top-stats display-table no-border">
+              <div class="col-xs-5 display-cell no-padding"> <i class="icon-group dashboard-top-stats-icon bg-success"></i> </div>
+              <div class="col-xs-7 display-cell no-padding">
+                <div class="dashboard-top-stats-heading">[lang.lang_users]</div>
+                <div class="dashboard-top-stats-value">[vars.client_users_count;onformat=runtime_number]</div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <!--client users end-->
+          <!--client tickets-->
+          <div class="col-lg-3 col-sm-6 col-xs-12 url-link" data-link="[conf.site_url]/client/tickets/list/open">
+            <div class="box-content dashboard-top-stats display-table no-border">
+              <div class="col-xs-5 display-cell no-padding"> <i class="icon-file-text dashboard-top-stats-icon bg-warning"></i> </div>
+              <div class="col-xs-7 display-cell no-padding">
+                <div class="dashboard-top-stats-heading">[lang.lang_open_tickets]</div>
+                <div class="dashboard-top-stats-value">[client_tickets_count.all_open;onformat=runtime_number]</div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <!--client tickets end-->
+          <!--bugs-->
+          <div class="col-lg-3 col-sm-6 col-xs-12 url-link" data-link="[conf.site_url]/client/bugs">
+            <div class="box-content dashboard-top-stats display-table no-border">
+              <div class="col-xs-5 display-cell no-padding"> <i class="icon-bug dashboard-top-stats-icon bg-purple"></i> </div>
+              <div class="col-xs-7 display-cell no-padding">
+                <div class="dashboard-top-stats-heading">[lang.lang_pending_bugs]</div>
+                <div class="dashboard-top-stats-value">[client_bugs_count.all_open;onformat=runtime_number]</div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <!--bugs end-->
+          <div class="col-lg-3"></div>
+        </div>
+        <!--WI_STATS_TOP-->
+        <!--WI_TASKS_AND_PINNED_PROJECTS-->
+        <div class="row">
+          <!-------------------------------------------------TIMELINE------------------------------------------------->
+          <div class="col-lg-8">
+            <div class="widget" style="margin-top:0px;">
+              <div class="widget-content widget-content-project slimScrollProjectTimeline"  style="padding-top:7px;">
+                <!--heading-->
+                <div class="dashboard-panels-heading"> [lang.lang_my_projects] - [lang.lang_events_timeline] </div>
+                <!--WI_PROJECT_EVENTS-->
+                <div class="project-info-tabs">
+                  <ul class="timeline">
+                    <!--[onshow;block=ul;when [visible.show_timeline] == 1;comm]-->
+                    <!--left event-->
+                    <li>
+                      <div class="tl-circ [timeline.project_events_type;block=li;onformat=runtime_timeline_colors]"><i class="[timeline.project_events_type;block=li;onformat=runtime_timeline_icons]"></i></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <div><strong>
+                            <!--[timeline.user_name;block=li;onformat=runtime_check_blank_ucwords;comm;ope=max:20]-->
+                            </strong></div>
+                          <div>
+                            <!--[timeline.project_events_action_lang;block=li;onformat=runtime_check_blank;comm]-->
+                          </div>
+                          <div><small class="text-muted"><i class="icon-time"></i>
+                            <!--[timeline.project_events_date;block=li;onformat=runtime_time_ago;comm]-->
+                            </small></div>
+                        </div>
+                        <div class="tl-body">
+                          <div>
+                            <!--[timeline.project_events_item;block=li;onformat=runtime_check_blank;comm;ope=max:60]-->
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <!--left event end-->
+                    <!--right event-->
+                    <li class="timeline-inverted">
+                      <div class="tl-circ [timeline.project_events_type;block=li;onformat=runtime_timeline_colors]"><i class="[timeline.project_events_type;block=li;onformat=runtime_timeline_icons]"></i></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <div><strong>
+                            <!--[timeline.user_name;block=li;onformat=runtime_check_blank_ucwords;comm;ope=max:20]-->
+                            </strong></div>
+                          <div>
+                            <!--[timeline.project_events_action_lang;block=li;onformat=runtime_check_blank;comm]-->
+                          </div>
+                          <div><small class="text-muted"><i class="icon-time"></i>
+                            <!--[timeline.project_events_date;block=li;onformat=runtime_time_ago;comm]-->
+                            </small></div>
+                        </div>
+                        <div class="tl-body">
+                          <div>
+                            <!--[timeline.project_events_item;block=li;onformat=runtime_check_blank;comm;ope=max:60]-->
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <!--right event-->
+                  </ul>
+                  <!--wi_no_timeline-->
+                  <div style="text-align:center; padding-top:55px;">
+                    <!--[onshow;block=div;when [visible.show_no_timeline] == 1;comm]-->
+                    <h2>[lang.lang_no_timeline_events]</h2>
+                  </div>
+                  <!--wi_no_timeline-->
+                </div>
+                <!--WI_PROJECT_EVENTS-->
+              </div>
+            </div>
+          </div>
+          <!-------------------------------------------------TIMELINE END------------------------------------------------->
+          <div class="col-lg-4">
+            <!--WI_PINNED_PROJECT_NONE-->
+            <div class="box dashboard-projects-none">
+              <!--[onshow;block=div;when [visible.wi_project_none] == 1;comm]-->
+              <div class="box-content">
+                <h2>[lang.lang_you_have_no_open_projects]</h2>
+              </div>
+            </div>
+            <!--WI_PINNED_PROJECT_NONE-->
+            <!--WI_PINNED_PROJECT_1-->
+            <div class="dashboard-pinned-project dashboard-pinned-project-info url-link" data-link="[conf.site_url]/client/project/[project_one.projects_id]/view">
+              <!--[onshow;block=div;when [visible.wi_project_one] == 1;comm]-->
+              <div class="dashboard-pinned-project-header bg-info"> <span class="project-client-name"><i class="icon-folder-open"></i>
+                <!--[project_one.projects_title;onformat=runtime_check_blank_ucwords;comm;ope=max:25]-->
+                </span> <span class="project-title">[lang.lang_project_progress]</span> <span class="project-progress">
+                <div class="progress active">
+                  <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:[project_one.projects_progress_percentage;onformat=runtime_number]%" class="progress-bar"><span class="progress-text"></span></div>
+                </div>
+                </span> </div>
+              <ul class="dashboard-pinned-project-footer">
+                <li class="border-right">
+                  <div class="text-count">
+                    <!--[project_one.projects_progress_percentage;onformat=runtime_number;comm]-->
+                    %</div>
+                  <div class="text-description text-muted">[lang.lang_complete]</div>
+                </li>
+                <li class="border-right">
+                  <div class="text-count">
+                    <!--[project_one.pending_tasks;onformat=runtime_number;comm]-->
+                  </div>
+                  <div class="text-description text-muted">[lang.lang_my_tasks]</div>
+                </li>
+                <li>
+                  <div class="text-count">
+                    <!--[project_one.project_deadline;onformat=tbs_runtime_daysleft;comm]-->
+                  </div>
+                  <div class="text-description text-muted">[lang.lang_days_due]</div>
+                </li>
+              </ul>
+            </div>
+            <!--WI_PINNED_PROJECT_1-->
+            <!--WI_PINNED_PROJECT_2-->
+            <div class="dashboard-pinned-project dashboard-pinned-project-purple url-link" data-link="[conf.site_url]/client/project/[project_two.projects_id]/view">
+              <!--[onshow;block=div;when [visible.wi_project_two] == 1;comm]-->
+              <div class="dashboard-pinned-project-header bg-purple"> <span class="project-client-name"><i class="icon-folder-open"></i>
+                <!--[project_two.projects_title;onformat=runtime_check_blank_ucwords;comm;ope=max:25]-->
+                </span> <span class="project-title">[lang.lang_project_progress]</span> <span class="project-progress">
+                <div class="progress active progress-purple">
+                  <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:[project_two.projects_progress_percentage;onformat=runtime_number]%" class="progress-bar"><span class="progress-text"></span></div>
+                </div>
+                </span> </div>
+              <ul class="dashboard-pinned-project-footer">
+                <li class="border-right">
+                  <div class="text-count">
+                    <!--[project_two.projects_progress_percentage;onformat=runtime_number;comm]-->
+                    %</div>
+                  <div class="text-description text-muted">[lang.lang_complete]</div>
+                </li>
+                <li class="border-right">
+                  <div class="text-count">
+                    <!--[project_two.pending_tasks;onformat=runtime_number;comm]-->
+                  </div>
+                  <div class="text-description text-muted">[lang.lang_tasks]</div>
+                </li>
+                <li>
+                  <div class="text-count">
+                    <!--[project_two.project_deadline;onformat=tbs_runtime_daysleft;comm]-->
+                  </div>
+                  <div class="text-description text-muted">[lang.lang_days_due]</div>
+                </li>
+              </ul>
+            </div>
+            <!--WI_PINNED_PROJECT_2-->
+            <!--INVOICES DUE-->
+            <div class="dashboard-pending-income bg-warning">
+              <div class="income-total">
+                <div><span class="currency">
+                  <!--[settings_general.currency_symbol;comm]-->
+                  </span><span class="amount">
+                  <!--[vars.overdue_invoices;onformat=runtime_number_decimal;comm]-->
+                  </span></div>
+                <div class="income-description allcaps">[lang.lang_overdue_invoices]</div>
+                <div> <span class="lowercase">[lang.lang_as_of_today]</span></div>
+              </div>
+              <div class="income-breakdown">
+                <div><span class="currency">
+                  <!--[settings_general.currency_symbol;comm]-->
+                  </span><span class="amount">
+                  <!--[vars.due_invoices;onformat=runtime_number_decimal;comm]-->
+                  </span></div>
+                <div class="income-description allcaps">[lang.lang_due_invoices]</div>
+                <div><span class="lowercase">[lang.lang_as_of_today]</span></div>
+              </div>
+            </div>
+          </div>
+          <!--INVOICES DUE-->
+        </div>
+      </div>
+      <!--WI_TASKS_AND_PINNED_PROJECTS-->
+    </div>
+  </div>
+  <!-- Matter ends -->
+</div>
+<!-- Mainbar ends -->
+<div class="clearfix"></div>
+<!-- Content ends -->
+<!----------------------COMMON FOOTER--------------------------------->
+<!--[onload;file=../common/common.footer.html;getbody;comm]-->
+<!----------------------COMMON FOOTER--------------------------------->
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="icon-chevron-up"></i></a></span>
+<!--WI_EDIT_TASK_MODAL-->
+<div class="row">
+  <div id="editTaskModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="form-horizontal" action="[conf.site_url]/client/home/edit-task" method="post" id="editTask">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            <!--full screen icon - custom.js-->
+            <button type="button" class="full-screen-modal close" aria-hidden="true"><i class="icon-fullscreen"></i></button>
+            <!--full screen icon - custom.js-->
+            <h4 class="modal-title"> [lang.lang_edit_task]</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group" style="margin-bottom:10px;">
+              <label class="control-label col-lg-12" style="width:150px;"> [lang.lang_description]</label>
+              <div class="col-lg-12">
+                <input type="text" class="form-control" id="task_text_edit" name="tasks_text" autocomplete="off">
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom:10px;">
+              <label class="control-label col-lg-12" style="width:150px;"> [lang.lang_start_date]</label>
+              <div class="col-lg-12">
+                <input type="text" class="form-control pickadate" name="tasks_start_date"  id="task_start_date_edit">
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom:10px;">
+              <label class="control-label col-lg-12" style="width:150px;"> [lang.lang_end_date]</label>
+              <div class="col-lg-12">
+                <input type="text" class="form-control pickadate" name="tasks_end_date"  id="task_end_date_edit">
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom:10px;">
+              <label class="control-label col-lg-12" style="width:150px;"> [lang.lang_status]</label>
+              <div class="col-lg-12">
+                <select id="tasks-status-list-edit" name="tasks_status" style="width:100%">
+                  <!--NB: do not change lang on value=""-->
+                  <option value="pending"> [lang.lang_pending]</option>
+                  <option value="completed"> [lang.lang_completed]</option>
+                  <option value="behind schedule"> [lang.lang_behind_schedule]</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">[lang.lang_close]</button>
+            <input type="hidden" id="task_id_edit" name="tasks_id" value="">
+            <input type="hidden" id="task_assigned_to_id_edit" name="tasks_assigned_to_id" value="">
+            <input type="hidden" id="task_milestone_id_edit" name="tasks_milestones_id" value="">
+            <input type="hidden" id="task_events_id_edit" name="tasks_events_id" value="">
+            <input class="btn btn-primary" type="submit" value="[lang.lang_save_changes]" id="" name="submit">
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!--WI_EDIT_TASK_MODAL-->
+<!--WI_IFRAME_MODAL-->
+<div class="row">
+  <div id="modalIframe" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          <!--full screen icon - custom.js-->
+          <button type="button" class="full-screen-modal close" aria-hidden="true"><i class="icon-fullscreen"></i></button>
+          <!--full screen icon - custom.js-->
+          <h4 class="modal-title" id="modal-iframe-title"> [lang.lang_edit]</h4>
+          <div class="clearfix"></div>
+        </div>
+        <div class="modal-body">
+          <iframe frameborder="0" class="slimScrollBarModal----"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">[lang.lang_close]</button>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--WI_IFRAME_MODAL-->
+<!--JS_EDIT_TASK_MODAL-->
+<script type="text/javascript">
+$().ready(function() {
+    //USED BY: WI_EDIT_NEW_TASK_MODAL
+	//ACTIONS: validates the form and submits it
+	//REQUIRES: jquery.validate.js
+	$("#editTask").validate({
+		rules: {
+             tasks_text: "required",
+			 tasks_milestones_id: "required",
+			 tasks_start_date: "required",
+			 tasks_end_date: "required",
+			 tasks_assigned_to_id: "required"
+		},
+		messages: {
+			tasks_text: "[lang.lang_field_is_required]",
+			tasks_milestones_id: "[lang.lang_field_is_required]",
+			tasks_start_date: "[lang.lang_field_is_required]",
+			tasks_end_date: "[lang.lang_field_is_required]",
+			tasks_assigned_to_id: "[lang.lang_field_is_required]"
+		},
+		submitHandler: function(form) {
+        //alert('form submitted');
+		form.submit();
+        }
+	});
+});
+</script>
+<!--JS_EDIT_TASK_MODAL-->
+<!--JS_EDIT_TASK_MODAL-->
+<script type="text/javascript">
+$(document).ready(function(){
+    //USED BY: WI_EDIT_TASK_MODAL
+	//ACTIONS: dynamically add data into modal form
+	//REQUIRES: jquery.js
+	//ACTIONS-2: creates a pull down/select for each specified field (with preselected values)
+    //REQUIRES-2: select2.js
+		
+    //---edit item link clicked-------
+    $(".edit-task-modal").click(function(){
+    
+        //get variables from "edit link" data attributes
+        var task_text_edit = $(this).attr("data-task-text");
+		var task_start_date_edit = $(this).attr("data-task-start-date");
+		var task_end_date_edit = $(this).attr("data-task-end-date");
+		var task_id_edit = $(this).attr("data-task-id");
+		var task_events_id_edit = $(this).attr("data-task-events-id");
+		var task_assigned_to_id_edit = $(this).attr("data-task-assigned-to-id");
+		var task_milestone_id_edit = $(this).attr("data-task-milestone-id");
+		var task_status_preselected = $(this).attr("data-task-status");
+
+        //set modal input values dynamically
+		$('#task_text_edit').val(task_text_edit);
+		$('#task_start_date_edit').val(task_start_date_edit);
+		$('#task_end_date_edit').val(task_end_date_edit);
+		$('#task_id_edit').val(task_id_edit);
+		$('#task_events_id_edit').val(task_events_id_edit);
+		$('#task_assigned_to_id_edit').val(task_assigned_to_id_edit);
+		$('#task_milestone_id_edit').val(task_milestone_id_edit);
+
+       //pre-select data in pull down lists
+       $("#tasks-status-list-edit").select2().select2('val', task_status_preselected); 
+  });
+    
+});
+</script>
+<!--JS_EDIT_TASK_MODAL-->
+<!--------------------COMMON FOOTER JAVASCRIPT---------------------------->
+<!--[onload;file=../common/common.footer.javascript.html;getbody;comm]-->
+<!--------------------COMMON FOOTER JAVASCRIPT---------------------------->
+</body>
+</html>

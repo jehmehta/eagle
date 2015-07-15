@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Freelance Dashboard Installer</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/wizard.css" rel="stylesheet">
+<!-- Jquery -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<!-- Jquery -->
+<!-- Bootstrap -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/bootstrap-switch.min.js"></script>
+<!-- Bootstrap -->
+<!-- validate -->
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+<!-- validate -->
+</head>
+<body>
+<div class="container">
+  <!--MAIN CONTAINER-->
+  <div class="row clearfix">
+    <div class="col-fixed col-centered">
+      <h3 class="text-shadow text-info">Freelance Dashboard Installation</h3>
+      <form action="index.php" method="post" id="setupForm">
+        <div class="box" style="margin-top:16px;">
+          <div class="box-head-light no-padding">
+            <!--WI_TOP_NAV_STEPS-->
+            <div>
+              <ul class='nav nav-wizard'>
+                <li class='[vars.nav_step_1]'><i class="icon-home"></i> Welcome</li>
+                <li class='[vars.nav_step_2]'><i class="icon-gears"></i> Server Requirement</li>
+                <li class='[vars.nav_step_3]'><i class="icon-folder-open"></i> Directory Permissions</li>
+                <li class='[vars.nav_step_4]'><i class="icon-tasks"></i> Database</li>
+                <li class='[vars.nav_step_5]'><i class="icon-user"></i> Account</li>
+                <li class='[vars.nav_step_6]'><i class="icon-flag"></i> Finish</li>
+              </ul>
+            </div>
+            <!--WI_TOP_NAV_STEPS-->
+          </div>
+          <div class="box-content box-pad">
+            <!--WI_ALERT_WARNING-->
+            <div class="alert alert-warning">
+              <!--[onshow;block=div;when [vars.wi_notice_error] == 1;comm]-->
+              [vars.notice;htmlconv=no] </div>
+            <!--WI_ALERT_WARNING-->
+            <!--WI_ALERT_SUCCESS-->
+            <div class="alert alert-success">
+              <!--[onshow;block=div;when [vars.wi_notice_success] == 1;comm]-->
+              [vars.notice;htmlconv=no] </div>
+            <!--WI_ALERT_SUCCESS-->
+            <!------------------------------------------------------(1)WELCOME----------------------------------------------->
+            <div id="step-1">
+              <!--[onshow;block=div;when [vars.wi_show_step] == 1;comm]-->
+              <h4>Welcome - Lets get started!</h4>
+              Thank your for deciding to use our software to help you with all your Project &amp; Client Management. <br />
+              This installer will guide you through all the steps necessary to install this application.
+              <div class="jumbotron">
+                <h4>Our easy to read Terms</h4>
+                <ul>
+                  <li>I will not distribute copies of this software, modified or otherwise</li>
+                  <li>I will not sell copies of this software, modified or otherwise</li>
+                  <li>I agree that Nextloop.net retains all copyright to this software</li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <input type="hidden" name="next_step" value="2">
+            </div>
+            <!---------------------------------------------------WELCOME----------------------------------------------->
+            <!----------------------------------------(2)SERVER SETTINGS----------------------------------------------->
+            <div id="step-1">
+              <!--[onshow;block=div;when [vars.wi_show_step] == 2;comm]-->
+              <h4>SERVER SETTINGS</h4>
+              Minimum server settings needed to run this software on your server. If your server does not meet these requirements, you may need to use a different web hosting provider.<br />
+              <div class="jumbotron">
+                <h5><strong>RESULTS:</strong></h5>
+                <ul>
+                  <li>PHP 5.3.0 Minimum - [vars.check_php_version;htmlconv=no]</li>
+                  <li>PHP GD Library - [vars.check_php_gd;htmlconv=no]</li>
+                  <li>PHP CURL Extension - [vars.check_php_curl;htmlconv=no]</li>
+                </ul>
+              </div>
+              <input type="hidden" name="next_step" value="3">
+            </div>
+            <!-----------------------------------------(2)SERVER SETTINGS----------------------------------------------->
+            <!----------------------------------------(3)FOLDER PERMISSIONS----------------------------------------------->
+            <div id="step-1">
+              <!--[onshow;block=div;when [vars.wi_show_step] == 3;comm]-->
+              <h4>FOLDER & FILE PERMISSIONS</h4>
+              The following folders/files must be CHMOD with WRITEABLE permissions. This is normally <strong>777</strong> or <strong>755</strong> for folders & <strong>666</strong> for files depending on your server. You can CHMOD files folders using your FTP client.<br />
+              <div class="jumbotron">
+                <h5><strong>RESULTS:</strong></h5>
+                <ul>
+                  <li>/updates [vars.check_folder_updates;htmlconv=no]</li>
+                  <li>/files  [vars.check_folder_files;htmlconv=no]</li>
+                  <li>/files/avatars  [vars.check_folder_avatars;htmlconv=no]</li>
+                  <li>/files/backups  [vars.check_folder_backups;htmlconv=no]</li>
+                  <li>/files/captcha  [vars.check_folder_captcha;htmlconv=no]</li>
+                  <li>/files/projects  [vars.check_folder_projects;htmlconv=no]</li>
+                  <li>/files/temp  [vars.check_folder_temp;htmlconv=no]</li>
+                  <li>/files/tickets  [vars.check_folder_tickets;htmlconv=no]</li>
+                  <li>/application/logs  [vars.check_folder_logs;htmlconv=no]</li>
+                  <li>/application/cache  [vars.check_folder_cache;htmlconv=no]</li>
+                  <li>/application/config/database.php (file)  [vars.check_folder_database;htmlconv=no]</li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <input type="hidden" name="next_step" value="4">
+            </div>
+            <!-----------------------------------------(3)FOLDER PERMISSIONS----------------------------------------------->
+            <!----------------------------------------(4)DATABASE----------------------------------------------->
+            <div id="step-1">
+              <!--[onshow;block=div;when [vars.wi_show_step] == 4;comm]-->
+              <h4>MYSQL - DATABASE DETAILS</h4>
+              Enter your MySQL database details. You must install using a <strong>new database</strong>. <br />
+              You can easily create a new database via your web hosting control panel (e.g. Cpanel etc)<br />
+              <div class="jumbotron">
+                <div class="form-group">
+                  <label class="col-lg-12 control-label">Server (usually localhost)</label>
+                  <div class="col-lg-12">
+                    <input type="text" class="form-control" name="database_server" value="[vars.database_server]"  autocomplete="off">
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-12 control-label">Database Name</label>
+                  <div class="col-lg-12">
+                    <input type="text" class="form-control" name="database_name" value="[vars.database_name]"  autocomplete="off">
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-12 control-label">Username</label>
+                  <div class="col-lg-12">
+                    <input type="text" class="form-control" name="database_username" value="[vars.database_username]"  autocomplete="off">
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-12 control-label">Password</label>
+                  <div class="col-lg-12">
+                    <input type="password" class="form-control" name="database_password"  autocomplete="off">
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <input type="hidden" name="mysql_submit" value="yes">
+              <input type="hidden" name="next_step" value="4">
+            </div>
+            <!-----------------------------------------(4)DATABASE----------------------------------------------->
+            <!----------------------------------------(5)DATABASE----------------------------------------------->
+            <div id="step-1">
+              <!--[onshow;block=div;when [vars.wi_show_step] == 5;comm]-->
+              <h4>ACCOUNT DETAILS</h4>
+              These will also be your main admin login details.<br />
+              <div class="jumbotron">
+                <div class="form-group">
+                  <label class="col-lg-12 control-label">Full Name</label>
+                  <div class="col-lg-12">
+                    <input type="text" class="form-control" name="admin_name"  autocomplete="off">
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-12 control-label">Email Address</label>
+                  <div class="col-lg-12">
+                    <input type="text" class="form-control" name="admin_email"  autocomplete="off">
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-12 control-label">Password</label>
+                  <div class="col-lg-12">
+                    <input type="password" class="form-control" name="admin_password"  autocomplete="off">
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <input type="hidden" name="account_submit" value="yes">
+              <input type="hidden" name="next_step" value="5">
+            </div>
+            <!-----------------------------------------(5)ACCOUNT DETAILS----------------------------------------------->
+            <!----------------------------------------(5)DATABASE----------------------------------------------->
+            <div id="step-1">
+              <!--[onshow;block=div;when [vars.wi_show_step] == 6;comm]-->
+              The installation has completed. You can now log in and start using the application.<br/>
+              <br/>
+              <strong>IMPORTANT:</strong> You must now delete the <strong>/install</strong> folder
+              <div class="jumbotron"><br />
+                <a href="[vars.url]/admin" class="btn btn-info"><strong>Admin:</strong><br/>
+                [vars.url]/admin</a> <br />
+                <br />
+                <a href="[vars.url]/client" class="btn btn-success"><strong>Client:</strong><br/>
+                [vars.url]/client</a> <br />
+                <div class="clearfix"></div>
+              </div>
+              <input type="hidden" name="account_submit" value="yes">
+              <input type="hidden" name="next_step" value="5">
+            </div>
+            <!-----------------------------------------(5)ACCOUNT DETAILS----------------------------------------------->
+          </div>
+          <div class="box-footer">
+            <div class="pull-left"> Freelance Dashboard by <a href="http://www.nextloop.net" target="_blank">NextLoop.net</a></div>
+            <div class="pull-right"> <span>
+              <!--[onshow;block=span;when [vars.form_button] == 1;comm]-->
+              <input class="btn btn-info" type="submit" value="Next Step" name="submit" />
+              </span> <span>
+              <!--[onshow;block=span;when [vars.form_button] == 0;comm]-->
+              <button class="btn btn-default disabled">Cannot continue - Fix the error and resubmit -OR- refresh browser</button>
+              </span> </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--MAIN CONTAINER-->
+</div>
+<!--DATABASE_VALIDATION-->
+<script>
+              <!--[onshow;block=script;when [vars.wi_show_step] == 4;comm]-->
+
+$().ready(function(){
+    //REQUIRES: jquery.validate.js
+    $("#setupForm").validate({
+        rules: {
+        
+            //fixed fields - each form field that needs to be validated
+            database_server: "required",
+            database_name: "required",
+            database_username: "required",
+            database_password: "required"
+        },
+        messages: {
+            database_server: "This field is required",
+            database_name: "This field is required",
+            database_username: "This field is required",
+            database_password: "This field is required"
+        },
+        submitHandler: function(form){
+            form.submit();
+        }
+    }); 
+});
+</script>
+<!--DATABASE_VALIDATION-->
+<!--ACCOUNT_VALIDATION-->
+<script>
+<!--[onshow;block=script;when [vars.wi_show_step] == 5;comm]-->
+$().ready(function(){
+    //REQUIRES: jquery.validate.js
+    $("#setupForm").validate({
+        rules: {
+        
+            //fixed fields - each form field that needs to be validated
+            admin_name: "required",
+            admin_email: "required",
+            admin_password: "required"
+        },
+        messages: {
+            admin_name: "This field is required",
+            admin_email: "This field is required",
+            admin_password: "This field is required"
+        },
+        submitHandler: function(form){
+            form.submit();
+        }
+    }); 
+});
+</script>
+<!--ACCOUNT_VALIDATION-->
+</body>
+</html>

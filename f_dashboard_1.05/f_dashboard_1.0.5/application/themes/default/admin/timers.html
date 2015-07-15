@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--DEV-ONLY-NOT-LOADED-DURING-RUNTIME-->
+<link href="../common/style/bootstrap.css" rel="stylesheet">
+<link href="../common/style/style.css" rel="stylesheet">
+<!--[onshow;block=head;when [visible.foo] == bar;comm]-->
+<!--DEV-ONLY-NOT-LOADED-DURING-RUNTIME-->
+</head>
+<!--HEAD - ONLOAD-->
+<!--[onload;file=../common/common.head.html;getbody;comm]-->
+<!--HEAD - ONLOAD-->
+<body>
+<!--JS SECTION - ONLOAD-->
+<!--[onload;file=../common/common.javascript.html;getbody;comm]-->
+<!--JS SECTION - ONLOAD-->
+<!--DEBUG SECTION - ONLOAD-->
+<!--[onload;file=../common/include.debug.html;getbody;comm]-->
+<!--DEBUG SECTION - ONLOAD-->
+<!--HEADER SECTION - ONLOAD-->
+<!--[onload;file=common.header.html;getbody;comm]-->
+<!--HEADER SECTION - ONLOAD-->
+<!-- Main content starts -->
+<div class="content">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!--SIDE MENU - ONLOAD -->
+    <!--[onload;file=common.menu.html;getbody;comm]-->
+    <!--SIDE MENU - ONLOAD -->
+  </div>
+  <!-- Sidebar ends -->
+  <!-- Main bar -->
+  <div class="mainbar">
+    <!----------------------COMMON PAGE HEADING--------------------------------->
+    <!--[onload;file=common.heading.html;getbody;comm]-->
+    <!----------------------COMMON PAGE HEADING--------------------------------->
+    <!-- Matter -->
+    <div class="matter">
+      <!--WI_INVOICE_ITEMS_SEARCH-->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">[lang.lang_toggle_navigation]</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <form class="navbar-form navbar-left form-small" action="[conf.site_url]/admin/timers/search-timers/[vars.timers_view_type]" method="post">
+              <div class="form-group">
+                <!--select2.js pulldown-->
+                <select id="all_timer_status" data-placeholder="[lang.lang_timer_status]" name="timer_status">
+                  
+                  <option></option>
+                  <option value="running">
+                  [lang.lang_running]</option>
+                  <option value="stopped">
+                  [lang.lang_stopped]</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <!--select2.js pulldown-->
+                <select id="all_projects" data-placeholder="[lang.lang_project_name]" name="projects_id">
+                  
+                  <option></option>
+                  
+                  
+                     <!--[lists.all_projects;noerr;htmlconv=no;protect=no;comm]-->            
+                  
+                
+                </select>
+              </div>
+              <div class="form-group">
+              <!--[onshow;block=div;when [visible.all_members] == 1;comm]-->
+                <!--select2.js pulldown-->
+                <select id="all_team_members" data-placeholder="[lang.lang_team_member]" name="team_profile_id">
+                  
+                  <option></option>
+                  
+                  
+                     <!--[lists.all_team_members;noerr;htmlconv=no;protect=no;comm]-->            
+                  
+                
+                </select>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">
+                [lang.lang_search_timers]</button>
+              </div>
+            </form>
+            <div class="clearfix"></div>
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+      </div>
+      <!--WI_INVOICE_ITEMS_SEARCH END-->
+      <div class="container">
+        <!----------------------COMMON NOTICES--------------------------------->
+        <!--[onload;file=../common/common.notices.html;getbody;comm]-->
+        <!----------------------COMMON NOTICES--------------------------------->
+        <!--WI_TIMERS_TABLE-->
+        <div class="row fullscreen-mode">
+          <!--[onshow;block=div;when [visible.wi_timers_table] == 1;comm]-->
+          <div class="col-md-12">
+            <div class="widget">
+              <div class="widget-content">
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>
+                        [lang.lang_project]<a href="[vars.sortby_project;noerr]"><i class="icon-sort bns-padded-left"></i></a></th>
+                      <th>
+                        [lang.lang_name]<a href="[vars.sortby_assigned_to;noerr]"><i class="icon-sort bns-padded-left"></i></a></th>
+                      <th>
+                        [lang.lang_time]<a href="[vars.sortby_time;noerr]"><i class="icon-sort bns-padded-left"></i></a></th>
+                      <th style="width:100px">lang_start_stop</th>
+                      <th style="width:75px; text-align:center; font-size:14px;">
+                        <i class="icon-reorder"></i><a href="[vars.sortby_assigned_to;noerr]"></a></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><!--[timers.projects_title;block=tr;comm;ope=max:150;onformat=runtime_check_blank_ucwords]--></td>
+                      <td><!--[timers.team_profile_full_name;block=tr;comm;ope=max:100;onformat=runtime_check_blank_ucwords]--></td>
+                      <td><span id="my-project-time-[timers.timer_id;block=tr]"><!--[timers.timer_seconds;block=tr;onformat=runtime_timer;comm]--></span></td>
+                      <td><!--start timer-->
+                        <span class="[timers.css_start_timer_btn;block=tr;]" id="btn-start-timer-[timers.timer_id;block=tr]">
+                        <button class="btn btn-success btn-small ajax-toggle-timers-list"
+                                data-mysql-record-id="[timers.timer_id;block=tr]"
+                                data-project-id="[timers.projects_id;block=tr]"
+                                data-timer-new-status="running"
+                                data-ajax-url="[conf.site_url]/admin/ajax/toggle-timer">[lang.lang_start_my_timer]</button>
+                        </span>
+                        <!--start timer end-->
+                        <!--stop timer-->
+                        <span class="[timers.css_stop_timer_btn;block=tr;]" id="btn-stop-timer-[timers.timer_id;block=tr]">
+                        <button class="btn btn-danger btn-small ajax-toggle-timers-list"
+                                data-mysql-record-id="[timers.timer_id;block=tr]"
+                                data-project-id="[timers.projects_id;block=tr]"
+                                data-timer-new-status="stopped"
+                                data-ajax-url="[conf.site_url]/admin/ajax/toggle-timer">[lang.lang_stop_my_timer]</button>
+                        </span>
+                        <!--stop timer end--></td>
+                      <td><!--button refresh timer-->
+                        <button class="btn btn-purple btn-small refresh-project-timers-list" 
+                      data-project-id="[timers.projects_id;block=tr]" 
+                      data-mysql-record-id="[timers.timer_id;block=tr]"
+                      data-ajax-url="[conf.site_url]/admin/ajax/refresh-timer"> <i class="icon-refresh"></i></button>
+                        <!--button refresh timer end-->
+                        <!--button edit timer-->
+                        <button data-toggle="modal"  class="btn btn-info btn-small edit-project-timer-modal" href="#editProjectTimerModal"
+                      data-project-id="[timers.projects_id;block=tr]" 
+                      data-mysql-record-id="[timers.timer_id;block=tr]"> <i class="icon-edit"></i></button>
+                        <!--button edit timer end-->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="widget-foot">
+                  <!--WI_PAGINATION-->
+                  <ul class="pagination pull-right">
+                    [vars.pagination;noerr;htmlconv=no]
+                  </ul>
+                  <!--WI_PAGINATION-->
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--WI_PROJECTS_TABLE-->
+        <!--WI_NOTIFICATION-->
+        <div class="row">
+          <!--[onshow;block=div;when [visible.wi_notification] == 1;comm]-->
+          <div class="col-md-12">
+            <div class="widget">
+              <div class="widget-content widget-big-box">[vars.notification;noerr]</div>
+            </div>
+          </div>
+        </div>
+        <!--WI_NOTIFICATION-->
+      </div>
+    </div>
+    <!-- Matter ends -->
+  </div>
+  <!-- Mainbar ends -->
+  <div class="clearfix"></div>
+</div>
+<!-- Content ends -->
+<!----------------------COMMON FOOTER--------------------------------->
+<!--[onload;file=../common/common.footer.html;getbody;comm]-->
+<!----------------------COMMON FOOTER--------------------------------->
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="icon-chevron-up"></i></a></span>
+<!--WI_EDIT_TIMER_MODAL-->
+<div class="row">
+  <div id="editProjectTimerModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="form-horizontal" action="[conf.site_url]/admin/timers/edit-timer" method="post" id="editProjectTimer">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            <!--full screen icon - custom.js-->
+            <button type="button" class="full-screen-modal close" aria-hidden="true"><i class="icon-fullscreen"></i></button>
+            <!--full screen icon - custom.js-->
+            <h4 class="modal-title">
+              [lang.lang_edit] Timer</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group" style="margin-bottom:10px;">
+              <label class="col-lg-12">
+              [lang.lang_fill_in_new_time]</label>
+              <div class="col-lg-12">
+                <input type="text" class="form-control" id="new_time" name="new_time" placeholder="0">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">[lang.lang_close]</button>
+            <input type="hidden" id="edit_timer_id" name="edit_timer_id" value="">
+            <input type="hidden" id="ref_url" name="ref_url" value="[vars.current_url]">
+            <input class="btn btn-primary" type="submit" value="[lang.lang_save_changes]" id="" name="submit">
+            
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!--WI_EDIT_TIMER_MODAL-->
+<!--WI_IFRAME_MODAL-->
+<div class="row">
+  <div id="modalIframe" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          <!--full screen icon - custom.js-->
+          <button type="button" class="full-screen-modal close" aria-hidden="true"><i class="icon-fullscreen"></i></button>
+          <!--full screen icon - custom.js-->
+          <h4 class="modal-title" id="modal-iframe-title">
+            [lang.lang_edit]</h4>
+          <div class="clearfix"></div>
+        </div>
+        <div class="modal-body">
+          <iframe frameborder="0" class="slimScrollBarModal----"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">[lang.lang_close]</button>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--WI_IFRAME_MODAL-->
+<!--JS_EDIT_TIMER_MODAL-->
+<script type="text/javascript">
+$(document).ready(function(){
+    //USED BY: WI_EDIT_TASK_TIMER_MODAL
+	//ACTIONS: dynamically add data into modal form
+	//REQUIRES: jquery.js
+		
+    //---edit item link clicked-------
+    $(".edit-project-timer-modal").click(function(){
+    
+        //get variables from "edit link" data attributes
+		var timer_id_edit = $(this).attr("data-mysql-record-id");
+
+        //set modal input values dynamically
+		$('#edit_timer_id').val(timer_id_edit);
+
+  });
+    
+});
+</script>
+<!--JS_EDIT_TIMER_MODAL-->
+<!--JS_EDIT_TIMER_MODAL-->
+<script>
+$().ready(function() {
+    //USED BY: WI_EDIT_TASK_TIMER_MODAL
+	//ACTIONS: validates time entered is a valid number (1 or 1.5 etc)
+	//REQUIRES: jquery.validate.js#
+	$("#editProjectTimer").validate({
+		rules: {
+             timer_duration: {
+                required: true,
+                number: true
+            }
+		},
+		messages: {
+			    timer_duration: {
+                required: "[lang.lang_field_is_required]",
+                number: "[lang.lang_only_numbers_are_allowed]"
+            }
+		},
+		submitHandler: function(form) {
+        //alert('form submitted');
+		form.submit();
+        }
+	});
+});
+</script>
+<!--JS_EDIT_TIMER_MODAL-->
+<!--JS_PULLDOWNLISTS-->
+<script>
+//USED BY: VARIOUS
+//ACTIONS: creates a nice pull down/select for each specified field
+//REQUIRES: select2.js
+//NOTES: no need for '$().ready(function()' as this only need jquery & select2.js which are loaded up top
+    $("#all_timer_status").select2({
+        allowClear: true
+    });
+    $("#all_projects").select2({
+        allowClear: true
+    });
+    $("#all_team_members").select2({
+        allowClear: true
+    });
+</script>
+<!--JS_PULLDOWNLISTS-->
+<!--JS_TOGGLE_TIMER-->
+<script>
+ //language
+ var lang_request_could_not_be_completed = "[lang.lang_request_could_not_be_completed;noerr]";
+ var lang_timer_has_been_updated = "[lang.lang_timer_has_been_updated;noerr]";
+</script>
+<script type="text/javascript" src="[conf.site_url_themes_common;noerr]/js/custom/custom.ajax.toggle.timers.timerspage.js"></script>
+<!--JS_TOGGLE_TIMER--->
+<!--JS_TOGGLE_REFRESH--->
+<script type="text/javascript" src="[conf.site_url_themes_common;noerr]/js/custom/custom.ajax.refresh.timers.timerspage.js"></script>
+<!--JS_TOGGLE_REFRESH--->
+<!--------------------COMMON FOOTER JAVASCRIPT---------------------------->
+<!--[onload;file=../common/common.footer.javascript.html;getbody;comm]-->
+<!--------------------COMMON FOOTER JAVASCRIPT---------------------------->
+</body>
+</html>

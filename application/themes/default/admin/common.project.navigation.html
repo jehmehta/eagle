@@ -1,0 +1,116 @@
+<!--WI_MAIN_NAVIGATION-->
+<div class="row">
+  <!--WI_PROJECT_MENU-->
+  <div class="col-lg-12 project-menu">
+    <div class="box side-menu-main">
+      <div class="box-head-dark"><i class="icon-list"></i> [lang.lang_project_menu] </div>
+      <div class="box-content">
+        <ul>
+          <li> <a class="[vars.css_active_tab_details;noerr]" href="[conf.site_url]/admin/project/[vars.project_id;noerr]/view"> [lang.lang_details]</a></li>
+          <li>
+            <!--[onshow;block=li;when [project_permissions.view_item_my_project_files] == 1;comm]-->
+            <!--permissions-->
+            <a class="[vars.css_active_tab_files;noerr]" href="[conf.site_url]/admin/files/[vars.project_id;noerr]/view"> [lang.lang_files]</a></li>
+          <li>
+            <!--[onshow;block=li;when [project_permissions.view_item_my_project_milestones] == 1;comm]-->
+            <!--permissions-->
+            <a class="[vars.css_active_tab_milestones;noerr]" href="[conf.site_url]/admin/milestones/[vars.project_id;noerr]/view"> [lang.lang_milestones]</a></li>
+          <li>
+            <!--[onshow;block=li;when [project_permissions.view_item_my_project_my_tasks] == 1;comm]-->
+            <!--permissions-->
+            <a class="[vars.css_active_tab_tasks;noerr]" href="[conf.site_url]/admin/tasks/[vars.project_id;noerr]/view"> [lang.lang_all_tasks] ([lang.lang_everyone])</a></li>
+          <li>
+            <!--[onshow;block=li;when [project_permissions.view_item_my_project_messages] == 1;comm]-->
+            <!--permissions-->
+            <a class="[vars.css_active_tab_messages;noerr]" href="[conf.site_url]/admin/messages/[vars.project_id;noerr]/view"> [lang.lang_messages]</a></li>
+          <li>
+            <!--[onshow;block=li;when [project_permissions.view_item_my_project_team_messages] == 1;comm]-->
+            <!--permissions-->
+            <a class="[vars.css_active_tab_teammessages;noerr]" href="[conf.site_url]/admin/teammessages/[vars.project_id;noerr]/view"> [lang.lang_team_messages]</a></li>
+          <li>
+            <!--[onshow;block=li;when [project_permissions.view_item_my_project_invoices] == 1;comm]-->
+            <!--permissions-->
+            <a class="[vars.css_active_tab_invoices;noerr]" href="[conf.site_url]/admin/invoices/[vars.project_id;noerr]/view"> [lang.lang_invoices]</a></li>
+          <li> <a class="[vars.css_active_tab_members;noerr]" href="[conf.site_url]/admin/members/[vars.project_id;noerr]/view"> [lang.lang_project_members]</a></li>
+          <li>
+            <!--[onshow;block=li;when [project_permissions.view_item_my_project_my_tasks] == 1;comm]-->
+            <!--permissions-->
+            <a class="[vars.css_active_tab_mytasks;noerr]" href="[conf.site_url]/admin/tasks/[vars.project_id;noerr]/view/0/asc/sortby_end_date/my/all/0"> [lang.lang_my_tasks]</a></li>
+          <li> <a class="[vars.css_active_tab_mynotes;noerr]" href="[conf.site_url]/admin/mynotes/[vars.project_id;noerr]/view"> [lang.lang_my_project_notes]</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--WI_PROJECT_MENU-->
+  <!--WI_MY_TASKS-->
+  <div class="col-lg-12">
+    <!--[onshow;block=div;when [project_permissions.view_item_my_project_my_tasks] == 1;comm]-->
+    <!--permissions-->
+    <div class="split-info-panel project">
+      <div class="split-info-panel-header bg-info"> <span class="split-panel-heading">[lang.lang_my_tasks]</span> </div>
+      <ul class="split-info-panel-footer">
+        <li class="border-right url-link" data-link="[conf.site_url]/admin/tasks/[vars.project_id]/view/0/desc/sortby_end_date/my/completed/0">
+          <div class="text-count">[my_project_tasks_count.completed;onformat=runtime_check_blank]</div>
+          <div class="text-description text-muted">[lang.lang_completed]</div>
+        </li>
+        <li class="border-right url-link" data-link="[conf.site_url]/admin/tasks/[vars.project_id]/view/0/desc/sortby_end_date/my/pending/0">
+          <div class="text-count">[my_project_tasks_count.pending;onformat=runtime_check_blank]</div>
+          <div class="text-description text-muted">[lang.lang_pending]</div>
+        </li>
+        <li class="url-link" data-link="[conf.site_url]/admin/tasks/[vars.project_id]/view/0/desc/sortby_end_date/my/behind-schedule/0">
+          <div class="text-count">[my_project_tasks_count.behind_schedule;onformat=runtime_check_blank]</div>
+          <div class="text-description text-muted">[lang.lang_behind]</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--WI_MY_TASKS-->
+  <!--WI_PROJECT_TIMER-->
+  <div class="col-lg-12">
+    <div class="split-info-panel project project-timer">
+      <div class="split-info-panel-header bg-night url-link" data-link="[conf.site_url]/admin/invoices/[vars.project_id]/view/all"> <span class="split-panel-heading split-panel-heading-timer" id="my-project-time">
+        <!--[vars.my_project_timer_hours_spent;onformat=runtime_timer;comm]-->
+        </span> </div>
+      <ul class="split-info-panel-footer">
+        <li  style="vertical-align:middle; padding: 10px 0px;">
+          <!--start timer-->
+          <span class="[vars.css_start_timer_btn]" id="btn-start-timer">
+          <button class="btn btn-success ajax-toggle-timer"
+                       data-mysql-record-id="[vars.my_project_timer_id]"
+                       data-project-id="[vars.project_id]"
+                       data-timer-new-status="running"
+                       data-ajax-url="[conf.site_url]/admin/ajax/toggle-timer">[lang.lang_start_my_timer]</button>
+          </span>
+          <!--start timer end-->
+          <!--stop timer-->
+          <span class="[vars.css_stop_timer_btn]" id="btn-stop-timer">
+          <button class="btn btn-danger ajax-toggle-timer"
+                       data-mysql-record-id="[vars.my_project_timer_id]"
+                       data-project-id="[vars.project_id]"
+                       data-timer-new-status="stopped"
+                       data-ajax-url="[conf.site_url]/admin/ajax/toggle-timer">[lang.lang_stop_my_timer]</button>
+          </span>
+          <!--stop timer end-->
+        </li>
+        <!--button refresh timer-->
+        <li style="vertical-align:middle; font-size:18px; font-weight:normal; padding: 10px 0px;width:10%;"> <a class="refresh-project-timer" 
+                      data-project-id="[vars.project_id]" 
+                      data-mysql-record-id="[vars.my_project_timer_id]"
+                      data-ajax-url="[conf.site_url]/admin/ajax/refresh-timer" href="#"> <i class="icon-refresh"></i></a> </li>
+        <!--button refresh timer end-->
+        <!--button edit timer-->
+        <li style="vertical-align:middle; font-size:18px; font-weight:normal; padding: 10px 0px;width:10%;"> <a data-toggle="modal" href="#editTimerModal"> <i class="icon-edit"></i></a> </li>
+        <!--button edit timer end-->
+      </ul>
+    </div>
+  </div>
+  <!--WI_PROJECT_TIMER-->
+</div>
+<!--WI_PROJECT_MENU-->
+<!--JS_TOGGLE_TIMER-->
+<script>
+ //language
+ var lang_request_could_not_be_completed = "[lang.lang_request_could_not_be_completed;noerr]";
+ var lang_timer_has_been_updated = "[lang.lang_timer_has_been_updated;noerr]";
+</script>
+<!--JS_TOGGLE_TIMER--->

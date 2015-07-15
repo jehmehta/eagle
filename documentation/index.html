@@ -1,0 +1,554 @@
+<!doctype html>
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>The Complete Client & Project Management Application</title>
+<meta name="description" content="Thank you for purchasing Freelance Dashboard. You can get support for this product via my Envato Page">
+<meta name="author" content="NextLoop.Net">
+<meta name="copyright" content="NextLoop.Net">
+<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+<meta name="date" content="2014-12-16T00:00:00+01:00">
+<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+<link rel="stylesheet" href="assets/css/style.css" media="all">
+<link rel="stylesheet" href="assets/css/font.css" type="text/css" cache="false" />
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/jquery.scrollTo.js"></script>
+<script src="assets/js/jquery.easing.js"></script>
+<script>document.createElement('section');var duration='500',easing='swing';</script>
+<script src="assets/js/script.js"></script>
+<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+-->
+</style>
+</head>
+<body class="documenter-project-freelance-dashboard">
+<div id="documenter_sidebar"> <a href="#documenter_cover" id="documenter_logo"><img src="assets/images/logo.png" alt="Freelance Dashboard"></a>
+  <ul id="documenter_nav">
+    <li><a class="current" href="#documenter_cover">Start</a></li>
+    <li><a href="#installation_guide" title="Installation Guide">Installation Guide</a></li>
+    <li><a href="#clients" title="Clients">Clients</a></li>
+    <li><a href="#projects" title="Projects">Projects</a></li>
+    <li><a href="#team_members" title="Team Members 7 Groups">Team Members & Groups</a></li>
+    <li><a href="#group_permissions" title="group Permissions">Group Permissions</a></li>
+    <li><a href="#mlestones_tasks" title="Milestone & Tasks">Milestone & Tasks</a></li>
+    <li><a href="#files" title="Files">Files</a></li>
+    <li><a href="#messaging" title="Messaging">Messaging</a></li>
+    <li><a href="#support_tickets" title="Support Tickets">Support Tickets</a></li>
+    <li><a href="#bugs" title="Bugs">Bugs</a></li>
+    <li><a href="#quotation_forms" title="Quotation Forms">Quotation Forms</a></li>
+    <li><a href="#general_settings" title="General Support">Settings</a></li>
+    <li><a href="#application_structure" title="Application Structure">Application Structure</a></li>    
+    <li><a href="#upgrading" title="Upgrading">Updates</a></li>
+  </ul>
+  <div id="documenter_copyright"><a href="http://www.nextloop.net">Copyright NextLoop.Net 2014</a><br>
+    made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> </div>
+</div>
+<div id="documenter_content">
+  <section id="documenter_cover">
+    <h1>Freelance Dashboard</h1>
+    <h2>The Complete Client & Project Management Application</h2>
+    <div id="documenter_buttons"> <a href="http://freelancedemo.nextloop.net/admin" class="btn btn-primary btn-large">Freelance Dashboard Demo</a> </div>
+    <hr>
+    <ul>
+      <li>Created: 26 December 2014</li>
+      <li>Latest update: 26 December 2014</li>
+      <li>By: NextLoop.Net</li>
+      <li><a href=""></a></li>
+      <li>email: support@nextloop.net</li>
+    </ul>
+    <p>Please note that Support and Updates are only available to customers who have genuine copies of this software.</p>
+  </section>
+  <section id="installation_guide">
+    <div class="page-header">
+      <h3>INSTALLATION GUIDE</h3>
+      <hr class="notop">
+    </div>
+    <h4> SYSTEM REQUIREMENTS</h4>
+    <ul>
+      <li> Apache Based PHP Server</li>
+      <li> PHP 5.3.x</li>
+      <li> Mysql Server</li>
+      <li> Mod Rewrite Enabled</li>
+      <li> .htaccess Enabled</li>
+      <li> Cron Jobs (via your hosting control panel)</li>
+    </ul>
+   <h4> UNZIP AND UPLOAD FILES VIA FTP</h4>
+   Once you have downloaded your copy of the software, place it on your desktop and unzip the folder. You will now have a directory with a structure shown below</p>
+    <h5><img src="assets/images/dir-structure.png" alt="DIRECTORY STRUCTURE" width="743" height="508"><br>
+      <strong>FIG.1</strong></h5>
+    <p>Upload all the files into your website's FTP folder. You can use an FTP client like WS_FTP.
+    <h4>CHMOD FOLDERS &amp; FILES</h4>
+The following folders must have their permissions  changed via FTP (<strong>CHMOD</strong>). <br>
+      <br>
+This will make them writeable. Normally you simply  right click the specified file/folder on the server side of you FTP Client and  you select ‘properties’ you will then have an option to set the permission  levels that you want.  
+<br>
+<br>
+<div class="info-panel">
+Typically for Folder you set the permission level to <strong>777</strong> or <strong>755</strong> (depending on your web host’s settings).<br> 
+If you have set to 777  and you find you are getting 500 SERVER ERROR then you must CHMOD back to 755.<br>  
+For file, the permission level needed is normally <strong>666</strong></div>
+    <br>
+    <br>
+    <div class="info-panel"><ul>
+      <li>/updates</li>
+      <li>/files</li>
+      <li>/files/avatars</li>
+      <li>/files/backups</li>
+      <li>/files/captcha</li>
+      <li>/files/projects</li>
+      <li>/files/temp</li>
+      <li>/files/tickets</li>
+      <li>/application/logs</li>
+      <li>/application/cache</li>
+      <li>/application/config/database.php</li>
+    </ul>
+    </div>
+    
+    <h4>MySQL DATABASE</h4>
+    You will need a MySQL database in order to install  the application.  
+You can easily create one via your web hosting  providers Control Panel (e.g. <strong>Cpanel</strong>). <br>
+When you have finished created your database via  your control pane, you should now have the following information:<br>
+<br>
+<div class="info-panel"><ul>
+      <li>DATABASE NAME</li>
+      <li>DATABASE USERNAME</li>
+      <li>DATABASE PASSWORD</li>
+    </ul>
+    </div>
+
+    <h4>START THE INSTALLATION WIZARD</h4>
+   Open your website to a url similar to the one below. You must replace the words <strong>yourdomain.com</strong> with your real domain name. Follow all the steps to complete your installation<br>
+<br>
+<div class="info-panel">http://www.yourdomain.com/install</div>
+    </p>
+    <br>
+<h5><img src="assets/images/wizard.png" alt="wizard" width="913" height="447"><br>  
+    <strong>FIG.2</strong></h5>
+    <h4>INSTALLING INTO A SUB-FOLDER<br>
+      <br>
+      <span class="style1">To avoid problems, please read these instructions carefully and completely    </span></h4>
+    <div class="danger-panel"> <strong>IMPORTANT (1):</strong> Use these instructions only <strong>IF</strong> you have installed to a <strong>SUBFOLDER</strong>. These instructions not <strong>NOT</strong> be used when installing to a <strong>SUBDOMAIN</strong><br>
+        <br>
+        <strong>SUBFOLDER</strong> : http://www.yourdomain.com/myclients<br>
+        <br>
+        <strong>SUBDOMAIN</strong>: http://myclients.yourdomain.com<br>
+    </div>
+    <p>If you are installing into a sub-folder e.g. http://www.yourdomain.com/sub folder you must follow all the instructions as above and then edit the <strong>.htaccess</strong> file that is the main folder of this application. </p>
+    <div class="danger-panel"> 
+      <p><strong>IMPORTANT (2):</strong> If you are installing in a subfolder, <strong>DO NOT</strong> name the sub-folder<strong> 'clients'</strong> or<strong> 'admin'</strong> this will create a conflict with folders of the same name in the application.<br>
+        <br>
+        <strong>OK</strong> : http://www.yourdomain.com/<strong>account</strong><br>
+        <br>
+      <strong>NOT OK</strong>: http://www.yourdomain.com/<strong>clients</strong></p>
+      <p><strong>NOT OK</strong>: http://www.yourdomain.com/<strong>admin</strong><br>
+          </p>
+    </div>
+    <p><br>
+    You will see a section in the<strong> .htaccess</strong> file, for you to type in your sub folder name. <br>
+    <br>
+    You then upload this file into your FTP<br>
+    <br>
+    Your directory structure will look like the image below<br>
+    </p>
+    <h5><img src="assets/images/sub-folder-installation.png" alt="sub-folder" width="622" height="479"><br>
+        <strong>FIG.2.1</strong><br>
+    </h5>
+    <h4>LOGIN INTO YOUR DASHBOARD</h4>
+   Once you have completed your installation, you will be able to access the application as follows:    
+    <div class="info-panel">
+      <ul>
+        <li><strong>ADMIN PANEL</strong> - http://www.yourdomain.com/admin</li>
+        <li><strong>CLIENT PANEL</strong> - http://www.yourdomain.com/client</li>
+      </ul>
+    </div>
+    <h5><img src="assets/images/login.png" alt="login" width="671" height="415">
+      <br>
+      <strong>FIG.3</strong>    </h5>
+    <p><br>
+    </p>
+  </section>
+  <section id="clients">
+    <div class="page-header">
+      <h3>CLIENTS</h3>
+      <hr class="notop">
+    </div>
+    <p> Clients are normally companies that you do projects for. Even if you client is an individual person, you need to first add them to the dashboard as a 'client/company) Once you have created your client, you will be able to add various users for this client (i.e. people who will have rights to login to the dashboard for this client)
+    <h4>CLIENTS MAIN MENU SECTION</h4>
+      To access this section. click on <strong>CLIENTS </strong>on the main menu. From the client main menu section you can do the following:<br>
+    <ul>
+      <li>SEARCH clients based on client id, company name or clients email</li>
+      <li>ADD new clients, using the 'Add New Clients' button</li>
+      <li>VIEW list of clients, showing essential information such as the clients main contact and their telephone number</li>
+      <li>DELETE clients. You do this by clicking the delete button</li>
+    </ul>
+    <h4>HOW TO ADD A CLIENT</h4>
+    To add a client, click on <strong>CLIENTS</strong> on the <strong>MAIN MENU</strong> and then click on the <strong>ADD NEW CLIENTS</strong> button (as shown below). You will get a new popup window for you to fill in your clients details. </p>
+    <h5><img src="assets/images/add-clients.png" alt="clients" width="900" height="427"><br>
+      <strong>FIG.4</strong></h5>
+    <p>You will be presented with to fill in the clients company details and also the details of the main contact person at the company. The person you specify here will receive an email automatically with their login details. The main contact (primary contact) is also the one who will receive all system generated emails such as invoices, notifications etc.</p>
+    <h5><img src="assets/images/add-clients-modal.png" alt="add client" width="753" height="594"><br>
+      <strong>FIG.5</strong></h5>
+    <h4>HOW TO DELETE A CLIENT</h4>
+    Do delete a client, you simply click the delete icon (<img src="assets/images/delete-icon.png" alt="delete" width="14" height="14" align="absmiddle">)
+    as shown in FIG.4. When you delete a client, all of that clients related data is also deleted. This included Projects, Invoices, Payments, Messages Files etc.<br>
+    <br>
+    <div class="danger-panel"><strong>IMPORTANT:</strong> This process cannot be reversed</div>
+  
+    <h4>CLIENT DASHBOARD</h4><p>The client dashboard is place where all the details of one client can be viewed (all in one place). You can access this dashboard by clicking on the clients name as show in FIG.4 above.<br>
+    From the client dash board you can do/access all the items listed below:<br>
+    </p>
+    <ul>
+    <li><strong>PROJECTS</strong> - View all the clients projects, including project progress and due date</li>
+    
+    <li><strong>INVOICES</strong> - View/Delete clients invoices</li>
+    <li><strong>PAYMENTS</strong> - View/Delete clients payments</li>
+    <li><strong>USERS</strong> - View/Add/Edit/Delete client users.</li>
+    <li><strong>PROFILE</strong> - View/Edit clients main profile details</li>
+    <li><strong>SUMMARY ITEMS</strong> - A summary of clients Projects, Paid &amp; Due Invoices, Payments made this month &amp; this year</li>
+    </ul>
+    <h5><img src="assets/images/client-profile.png" alt="client-profile" width="900" height="454"><br>
+      <strong>FIG.6</strong></h5>
+    <p>&nbsp;</p>
+  </section>
+  <section id="projects">
+    <div class="page-header">
+      <h3>Projects</h3>
+      <hr class="notop">
+    </div>
+    <p>Projects are the at the heart of this application. Most things revolve around projects. <br>
+      This means that most items will belong to a particular project. Files, invoices, bugs, tasks, comments etc, all belong to a project. <br>
+      <br>
+      Before you can do any of these things, you will need to create a project. The system admin has the right to create new projects on behalf of the client. 
+    <h4>PROJECTS MENU SECTION</h4>
+    To access this section. click on <strong>ALL PROJECTS </strong>on the main menu. From the Projects Main Menu section you can do the following:<br>
+    <ul>
+      <li>SEARCH  for projects based on project id, project title, clients company name</li>
+      <li>ADD  new projects, using the 'Add New Project' button</li>
+      <li>VIEW list of projects, showing essential information such as the project title, clients name, deadline &amp; project progress</li>
+      <li>DELETE projects. You do this by clicking the delete button</li>
+      <li>VIEW time spent on a project. This is the total time spent by all team members who are working on the project.</li>
+    </ul>
+    <p>To create a new project, simply click on the ADD NEW PROJECT button as shown below. A form will appear for you to fill in all the project details.</p>
+    <h5><img src="assets/images/projects.png" alt="projects" width="900" height="416"><br>
+        <strong>FIG.7</strong><br>
+    </h5>
+    <p>Once you have created/added a new project, your client will automatically receive an instant notification, with details of the new project.</p>
+    <h4>PROJECT DASHBOARD</h4>
+    <p>The project dashboard is place where all the   details of one project can be viewed (all in one place). You can access   this dashboard by clicking on the project from the list, as show in <strong>FIG.7</strong><br>
+      From the project dash board you can do/access all the items listed below:<br>
+    </p>
+    <div class="info-panel"> <strong>NOTE: </strong>The items with an asterisk* are only available to the ADMIN or a PROJECT LEADER. Other team members who do not have rights will not see these menu options<br>
+</div>
+
+    <ul>
+      <li><strong>DETAILS</strong> - A summary of the project showing, project brief, deadlines, key people</li>
+      <li><strong>FILES</strong> - View/Add/Edit/Delete project files. You can also comment on project files</li>
+      <li><strong>MILESTONE </strong>- View/Add/Edit/Delete project milestones. You can learn more about milestones in the sections that follow.. </li>
+      <li><strong>MY TASKS </strong>View/Add/Edit/Delete tasks that are assigned to you for this project</li>
+      <li><strong>MESSAGES</strong> - View/Add/Edit/Delete general project comments/messages. Clients can also access these messages</li>
+      <li><strong>TEAM MESSAGES</strong> - View/Add/Edit/Delete team messages. Team messages cannot be viewed by the client</li>
+      <li><strong>INVOICES</strong> - View/Add/Edit/Delete project invoices</li>
+      <li><strong>ALL TASKS</strong> -Similar to My Tasks above, but these are for all team members</li>
+      <li><strong>PROJECT MEMBERS </strong>- View/Add/Edit/Delete project members. This is where you can <strong>assigned</strong> team members to the project.</li>
+      <li><strong>PRJOJECT TIMER.</strong> The timer that is shown just below the project menu is YOUR timer. It records the time that you have spent on this project. All team members have access to their own timers. The total time of the project is calculated from all the timers for the particular project. You can also manually edit the project time (incase you forgot to start/stop it the last time etc)</li>
+      <li><strong>PROJECT PROGRESS</strong> - The project progress is always displayed on the top. The projects progress is calculated from the amount of progress that has been achieved for each <strong>project milestone</strong>. The progress of each project milestone is also calculated automatically from the number or tasks that have been completed in that milestone. Meaning that, ultimately, the progress of the project is determined by the overall number or tasks that are showing as completed (in their respective milestones)</li>
+      <li><strong>EVENTS TIMELINE</strong> - This timeline shows all the various actions 'key' actions that have been done on a project. You get a quick glimpse of who has done what on the project. It also helps the client to see what progress is being made on the project and to alert them on important actions that they need to carry out (such as paying a raised invoice)</li>
+    </ul>
+    <h5><img src="assets/images/project-panel.png" alt="project panel" width="899" height="513"><br>
+      <strong>FIG.8</strong></h5>
+    <p>&nbsp;</p>
+  </section>
+  <section id="team_members">
+    <div class="page-header">
+      <h3>TEAM MEMBERS &amp; GROUPS</h3>
+      <hr class="notop">
+    </div>
+    <p>If you work in a team, this application allows you to add as many TEAM MEMBERS as you like. Each team member must belong to a particular GROUP. The starting point is to make sure that you have some groups. The system comes with some some default groups (which you can delete and create you own if you want).</p>
+    <p>Groups are like departments in a company. For software company, the departments could be as an example</p>
+    <ul>
+      <li>GRAPHIC DESIGNERS</li>
+      <li>PHP DEVELOPERS</li>
+      <li>FRONTEND DEVELOPERS</li>
+      <li>ACCOUNTING</li>
+      <li>CUSTOMER SUPPORt</li>
+    </ul>
+    <p>If you work alone you do not really need to have any additional groups, apart from the default group ADMINSTRATORS, which is automatically created when you install the application.</p>
+    <p>To create a group, simply click on the GROUPS ICON on the TOP ADMIN MENU as shown below</p>
+    <h5><img src="assets/images/groups.png" alt="groups" width="900" height="356"><br>
+      <strong>FIG.9</strong></h5>
+  </section>
+  
+    <section id="group_permissions">
+    <div class="page-header">
+      <h3>GROUP PERMISSIONS</h3>
+      <hr class="notop">
+    </div>
+    <p> This application comes advanced permission controls, which allow the <strong>ADMINISTRATOR</strong> to specify the permissions that <strong>GROUPS</strong> have across the application's various resources. TEAM MEMBERS get their permission and level of access based on the <strong>GROUP</strong> that they belong to. <br>
+    </p>
+    <div class="info-panel"> <strong>NOTE: </strong>PROJECT LEADERS will have great access/permission for the particular project than what their group permissions normally allow.<br>
+    </div>
+    <h4>GROUP PERMISSIONS</h4>
+    <h5>To change permission levels for a particular group, click on the groups name from the list of groups(see FIG.9) .<br>
+      you will the be presented with a popup that will allow you to specify the groups permission levels. Permission levels are set on a scale called  PERMISSION LEVELS. This scale ranges from 0-4. <br>
+      <br>
+      The table below show what rights each level grants for each category/section or item in the dashboard.<br>
+      <br>
+      <img src="assets/images/permission-grid.png" alt="permissions matrix" width="694" height="190"><br>
+      <strong>FIG.10<br>
+      </strong><br>
+    </h5>
+    <div class="info-panel"> <strong>NOTE: </strong>The ADMINISTRATOR group has FULL permissions as default. These cannot be changed.<br>
+    </div>
+    <h5><br>
+        <br>
+      <img src="assets/images/permissions.png" alt="permissions" width="809" height="528"><br>
+      <strong>FIG.11</strong></h5>
+    <div class="danger-panel"> <strong>IMPORTANT: </strong>In the interest of security and effective operation of the application, some categories will not allow you to change their permissions level ABOVE or BELOW a certain level.<br>
+    </div>
+    <p>&nbsp;</p>
+    </section>
+  
+  
+  <section id="mlestones_tasks">
+    <div class="page-header">
+      <h3>MILESTONES & TASKS</h3>
+      <hr class="notop">
+    </div>
+    <p>To make managing a project easy, it must be split into smaller segments. A project is first broken its broad segments called <strong>MILESTONES</strong>. You can think of milestones as goals that you want to reach in a given period of time. Example of these broad goals can be:</p>
+    <div class="info-panel"><ul>
+      <li>DESIGN CONCEPTS</li>
+      <li>FRONTEND DEVELOPMENT</li>
+      <li>BACKEND DEVELOPMENT</li>
+      <li>TESTING &amp; HANDOVER</li>
+    </ul></div>
+    <p>Inside these broad segments, you can now create <strong>DAY TO DAY - TASKS. </strong>This is the actual work items that are needed to complete the <strong>MILESTONES</strong>.</p>
+    <p>To create <strong>MILESTONES</strong> and <strong>TASKS</strong>, you need to enter the particular <strong>PROJECTS</strong> </p>
+    <h5><img src="assets/images/milestones.png" alt="milestones" width="899" height="451"><br>
+      <strong>FIG.12</strong></h5>
+    <p><div class="info-panel">To add <strong>TASKS</strong> see the image below</div></p>
+    <h5><img src="assets/images/tasks.png" alt="tasks" width="899" height="443"><br>
+      <strong>FIG.13</strong></h5>
+  </section>
+  <section id="files">
+    <div class="page-header">
+      <h3>FILES</h3>
+      <hr class="notop">
+    </div>
+    <p>You can your client can both upload and share files to a particular project. To upload files, please see the image below. Once you have uploaded your files, you can click them view more details.</p>
+    <h5><img src="assets/images/files.png" alt="files" width="900" height="451"><br>
+      <strong>FIG.14</strong></h5>
+    <p>
+    <div class="info-panel">Once you have created a file, you and your client can download it and also post COMMENTS</div>
+    </p>
+    <h5><br>
+      <img src="assets/images/file comments.png" alt="file comments" width="769" height="1253"><br>
+          <strong>FIG.15</strong></h5>
+  </section>
+  <section id="messaging">
+    <div class="page-header">
+      <h3>MESSAGING</h3>
+      <hr class="notop">
+    </div>
+    <p> The application allow you to communicate effectively with your CLIENTS and also you TEAM MEMBERS. You will see the POST A COMMENT button in various areas of the application.</p>
+    <h5><img src="assets/images/messages.png" alt="messages" width="900" height="533"><br>
+        <strong>FIG.16</strong><br>  
+      <br>
+    </h5>
+    <div class="info-panel"><strong>NOTE:</strong>  Team Messages are <strong>private</strong> and cannot be viewed by the <strong>client</strong>. You can use them to discuss the project within your team.</div>
+  </section>
+  <section id="support_tickets">
+    <div class="page-header">
+      <h3>SUPPORT TICKETS</h3>
+      <hr class="notop">
+    </div>
+    <p> The application comes with a full featured SUPPORT TICKETS section. You and your clients can create and reply to tickets via this section. Tickets can also have file attachments. Please see image below to see how to access the SUPPORT TICKETS feature.</p>
+    <h5><img src="assets/images/tickets.png" alt="tickets" width="900" height="451"><br>
+      <strong>FIG.17</strong></h5>
+  </section>
+  <section id="bugs">
+    <div class="page-header">
+      <h3>BUGS</h3>
+      <hr class="notop">
+    </div>
+    <p> The application comes with a <strong>BUG TRACKING</strong> feature, which allows your clients to report any bugs that they find in your products. To access the <strong>BUG TRACKE</strong>R, click on the <strong>BUGS</strong> link on the <strong>MAIN MENU</strong></p>
+    <h5><img src="assets/images/bugs.png" alt="bugs" width="900" height="417"><br>
+      <strong>FIG.18</strong></h5>
+  </section>
+  <section id="quotation_forms">
+    <div class="page-header">
+      <h3>QUOTATIONS</h3>
+      <hr class="notop">
+    </div>
+    <p>The applications allows you to create forms that your existing clients or potential clients can fill in to request a quotation from you.<br>
+      <br> 
+      Once you clients have filled in the quotation forms, you will be able to price them and let them know how much the work will cost. <br>
+      <br>
+      We have included a default QUOTATION FORM, but you can create your own forms using the easy to use QUOTATION FORM BUILDER<br>
+        <br>
+    <h4>QUOTATION FORM BUILDER &amp; QUOTATIONS</h4>
+    
+      The system is made of 2 parts, as follows
+      <ul>
+        <li><strong>QUOTATION FORM BUILDER <br> 
+        </strong>This is what you use to create your own custom forms. You can access this via the main menu item QUOTATION FORMS</li>
+        <li><strong>ACTUAL QUOATIONS <br> 
+        </strong>These are the forms that have actually been completed by your clients. You access these via the main menu item QUOTATIONS</li>
+    </ul>
+      <h4>QUOTATION FORM BUILDER - MAKING YOUR OWN FORM</h4>
+      To create your own quotation form, you click on the QUOTATION FORMS menu and then the CREATE NEW FORM BUTTON (as shown below)<br>
+      <br>
+      <br>
+      <img src="assets/images/quotation-forms-create.png" alt="forms" width="900" height="362">      <br>
+      <strong>FIG.18</strong>.1
+    <p>You will be presented with the form builder. This is a simple to use tool for dynamically created web forms (Quotation Forms) that you clients can fill in. <br>
+    <br>Please see the images below for the steps to take to create your form<br>
+    <br>
+    <img src="assets/images/form-builder-step-1.png" alt="step-1" width="900" height="299"><br>
+    <strong>FIG.18.2</strong><br>
+    <br>
+    <strong>NEXT</strong><br>
+    <br>
+    <img src="assets/images/form-builder-step-2.png" alt="step-2" width="900" height="484"><br>
+    <strong>FIG.18.3</strong><br>
+    <br>
+      
+    <div class="info-panel">When you have added all your form fields, you save the form. This new Quotation Form will now be added to your list of forms. </div>
+    <p><br>
+      <h4>HOW DO CLIENTS FILL IN THESE FORMS?</h4>
+      Once you have created your Quotation Forms, then next important thing is to give you clients access to these forms.
+      <ul>
+        <li><strong>DIRECTLY INSIDE CLIENTS DASHBOARD:<br> 
+        </strong>Your clients will be able to view and fill in these forms when they are logged into their Dashboard. They will use their main menu item QUOTATIONS<br>
+        <br>
+        </li>
+        <li><strong>LINK TO THE FORMS FROM YOUR WEBSITE:<br> 
+        </strong>You can also add a link to your main website like &quot;Request a Quotation&quot; and link it to a url like the one shown below<strong><br>
+        <br>
+        </strong>
+          <div class="info-panel">http://your-dashboard-url/common/quotation</div>
+          <strong><img src="assets/images/request-quotation.png" alt="request-quotation" width="801" height="289"><br>
+           FIG.18.4</strong> <strong><br>
+          </strong></li>
+    </ul>
+      <p><br>
+          <br>
+          </section>
+  <section id="general_settings">
+    <div class="page-header">
+      <h3>SYSTEM SETTINGS</h3>
+      <hr class="notop">
+    </div>
+    <p> At the heart of this application is the very advanced SETTINGS management section. We have made sure that you will rarely need to manually edit any settings files or config files in order to make system wide changes.</p>
+    <h5>The SETTINGS section has various tabs, which will allow you to configure those aspects of the PRODUCT. We have included some instructions for the various settings sections (within the application)
+      <br>
+      <br>
+      <img src="assets/images/settings.png" alt="settings" width="900" height="498"><br>
+      <strong>FIG.19</strong><br>
+    </h5>
+    <h4>GENERAL SETTINGS</h4>
+General settings allow you to set the system wide config values. These include
+<ul>
+<li><strong>DASHBOARD TITLE</strong> - Displayed in the site header</li>
+<li><strong>LANGUAGE</strong> - All languages must be stores in the FTP folder <strong>/application/language.</strong></li>
+<li><strong>THEME</strong> - If you have another theme, it must first be uploaded via FTP into the <strong>/applications/themes</strong> folder</li>
+<li><strong>DATE FORMAT</strong> - Used to display dates. This must be a PHP valid date format (please see<a href="http://php.net/manual/en/function.date.php" target="_blank"> php.net website</a>)</li>
+<li><strong>GENERAL PAGE LIMITS</strong> - This sets the maximum number of items that are displayed in search results or item listings</li>
+<li><strong>MESSAGES PAGE LIMITS</strong>- This sets the maximum number or comments that are displayed on a single page</li>
+<li><strong>TIME LINE DISPLAY LIMITS</strong> - This sets the maximum number of events that are displayed in the timeline</li>
+<li><strong>CURRENCY</strong> - The international format currency symbol for your default currency. This will also be the same used with your payment gateway.</li>
+<li><strong>CURRENCY SYMBOL</strong>- The symbol that is displayed next to amounts</li>
+<li><strong>SHOW INFORMATION TIPS</strong> - Displays help tips and information throughout the dashboard. You can disabled this to hide the information</li>
+<li><strong>ALLOW CLIENT REGISTRATION</strong> - If enabled, your clients will see a &quot;create an account&quot; button on the login form.</li>
+<li><strong>NOTIFICATIONS</strong> - Display Duration (mil i-seconds) - This sets for how long the system messages are displayed (i.e. the little popup messages)</li>
+<li><strong>PRODUCT PURCHASE CODE</strong> (license number) - This is the code that you received when you made the purchase. You can view this via your Envato dashboard</li>
+</ul>
+  <div class="danger-panel"><strong>NOTE:</strong> You will not be able to download updates if you do not have a valid product purchase code</div>
+  <h4>COMPANY  SETTINGS</h4>
+  <p>This is where you set all your company information (name, telephone, etc)</p>
+  <h4>INVOICE  SETTINGS</h4>
+  <p>These settings affect how invoices are paid by your clients</p>
+  <ul>
+    <li><strong>ALLOW PARTIAL PAYMENTS-</strong> Enable this if you want your clients to make partial payments for invoices. This will allow the client to fill in amount they want to pay at a time for each invoice. if disabled, the client will only be allow to make full payments each time.</li>
+    <li><strong>EMAIL OVERDUE REMINDER</strong> - If enabled, the system will automatically send out a single invoice payment reminder when invoices become overdue</li>
+    <li><strong>INVOICE NOTES</strong> - Default message that is displayed at the footer of each invoice (such as your payment terms etc)</li>
+  </ul>
+  <h4>PAYPAL  SETTINGS</h4>
+  <p>These settings are for your paypal payment gateway.</p>
+  <ul>
+    <li><strong>Gateway Active -</strong> Enable/Disable this payment gateway</li>
+    <li><strong>Paypal Email Address -</strong> Your Paypal email address. Please note that you must have a <strong>Business</strong> or <strong>Premier</strong> Paypal account.</li>
+    <li><strong>Currency -</strong> For consistency, you must ensure that this is the same as your GENERAL SETTINGS currency.</li>
+    </ul>
+  <h4>EMAIL TEMPLATES  SETTINGS</h4>
+  <h5>The system has an easy to use editor for editing all the emails that are sent out by the application. Simply select the template you want to edit and save your changes.<br>
+    <br>
+    <img src="assets/images/email-templates.png" alt="email templates" width="900" height="645"><br>
+    <strong>FIG.20</strong></h5>
+  <h4>SUPPORT TICKETS  SETTINGS</h4>
+  <h5>The Support Tickets settings page allows you to do all the following:</h5>
+  <ul>
+    <li><strong>CREATE SUPPORT DEPARTMENTS -</strong> You can create as many departments as you need (e.g. Support, Sales, Billing etc)</li>
+    <li><strong>MOVE TICKETS</strong> - You can also bulk move all tickets from one department to another. This is particularly useful if you want to delete a department</li>
+    <li><strong>DELETE DEPARTMENT</strong> - You can delete a department using this option</li>
+  </ul>
+  <h5><img src="assets/images/settings-tickets.png" alt="tickets" width="900" height="582"><br>  
+      <strong>FIG.21</strong><br>
+  </h5>
+  <h4>OPTIONAL FORM FIELDS SETTINGS</h4>
+  <h5>The application allows you to add additional form fields to the following forms:</h5>
+  <ul>
+    <li><strong>CLIENT REGISTRATION FORM</strong></li>
+    <li><strong>NEW PORJECT FORM</strong></li>
+    </ul>
+  <p>This allows you to collect additional information which is not a part of the default forms. Below are just some example of what you could add using this option</p>
+  <ul>
+    <li><strong>FTP LOGIN DETAILS</strong></li>
+    <li><strong>VAT OR TAX INFORMATION</strong></li>
+    <li><strong>PROJECT SEPCIFIC QUESTIONS</strong><br>
+    </li>
+    </ul>
+  <h5>To enable these optional fields, simply fill out the form.<br>
+    <br>
+      <img src="assets/images/settings-optional.png" alt="optional fields" width="900" height="668"><br>
+        <strong>FIG.22</strong><br>
+    </h5>
+  <div class="danger-panel"><strong>IMPORTANT NOTICE:</strong> In order to keep your data consistent, do not keep changing the forms. Remember that the information already stored will not be changed when you rename a form. Meaning that if your form was asking for FTP login details and you have now changed it to as for TAX details, some of your old clients data will not jake sense unless you also update it.</div>
+  <h4>CRON JOBS SETTINGS</h4>
+  <h5>Cron Jobs are tasks that are run in the background at set intervals. Cron Jobs are used for example to automatically send invoice reminder messages. In order for the application do this, your web hosting account will need to allow Cron Jobs. You will typically have to copy and paste the link that is provided into your <strong>web hosting control panels</strong> cron form. Web hosting control panels such as CPANEL / PLESK etc will easily allow you to do this.</h5>
+  <p>The URL that you will need is provided in this section of the settings page.<br>
+    <br>
+  </p>
+  <h4>DATABASE BACKUP SETTINGS</h4>
+  <h5>Its vitally important that you always maintain a backup copy of your database. The application provides you with an easy way to download a backup copy of your database.<br>
+    <br>
+    <img src="assets/images/settings-database-backup.png" alt="database backup" width="900" height="297"><br>
+    <strong>FIG.23</strong><br>
+  </h5>
+  <div class="danger-panel"><strong>IMPORTANT: </strong>This backup is only for your <strong>MySQL Database File ONLY</strong> file. It will NOT include all your application files and any uploaded files. To have a complete backup of your system, you must also regularly make a full FTP download of your entire installation. Other web hosting control panels such as CPANEL will allow you do your backup via their control panel</div>
+  <p><br>
+  </p>
+  </section>
+  <section id="application_structure">
+    <div class="page-header">
+      <h3>APPLICATION STRUCTURE</h3>
+      <hr class="notop">
+    </div>
+    <p>This application is built on the CODEIGNITER framework. You can learn more about this FRAMEWORK by visiting http://www.codeigniter.com</p>
+    <p><img src="assets/images/file-structure.png" alt="file-structure" width="899" height="545"></p>
+  </section>
+  <section id="upgrading">
+    <div class="page-header">
+      <h3>UPDATES</h3>
+      <hr class="notop">
+    </div>
+    <p>Every now and then we will release updates that either fix bugs or add new functionality. You can view all available updates via the SETTINGS section of the application. Please note that you can only download updates if you have a valid <strong>PRODUCT PURCHASE CODE</strong>. This is the code that you received when you made your purchase.</p>
+  </section>
+</div>
+</body>
+</html>

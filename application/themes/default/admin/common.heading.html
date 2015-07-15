@@ -1,0 +1,48 @@
+<div class="page-head">
+  <h2 class="pull-left responsive-heading-title">[vars.main_title_icon;htmlconv=no;noerr]
+    
+    [vars.main_title;ope=max:35]</h2>
+  <!-- menu -->
+  <div class="heading-menu pull-right responsive-heading-tabs">
+    <ul>
+      <!--WI_MY_PROJECTS-->
+      <li>
+        <div class="btn-group"> <a class="[vars.css_menu_heading_myprojects]" href="[conf.site_url]/admin/myprojects/list/in-progress"> <i class="icon-folder-open"></i> <span>[lang.lang_my_projects]</span></a> </div>
+      </li>
+      <!--WI_MY_PROJECTS-->
+      <!--WI_MY_TIMERS-->
+      <li>
+        <div class="btn-group"> <a class="[vars.css_menu_heading_mytimers]" href="[conf.site_url]/admin/timers/view/[vars.my_id]"> <i class="icon-time"></i> <span>[lang.lang_my_timers]</span></a> </div>
+      </li>
+      <!--WI_MY_TIMERS-->
+      <!--WI_MY_TASKS-->
+      <li>
+        <div class="btn-group"> <a class="[vars.css_menu_heading_mytasks]" href="[conf.site_url]/admin/mytasks"> <i class="icon-list-ul"></i> <span>[lang.lang_my_tasks]</span></a> </div>
+      </li>
+      <!--WI_MY_TASKS-->
+      <!--WI_ACCOUNT-->
+      <li>
+        <div class="btn-group dropup"> <a class="iframeModal"
+                                                data-toggle="modal" 
+                                                data-modal-window-title="[lang.lang_edit_user_profile]"
+                                                data-src="[conf.site_url]/admin/team/edit-modal/[vars.my_id]" 
+                                                data-height="350" 
+                                                data-width="100%" 
+                                                data-target="#modalIframe"> <i class="icon-gears"></i> <span>[lang.lang_my_account]</span></a> </div>
+      </li>
+      <!--WI_ACCOUNT-->
+            <!--WI_SETTINGS-->
+      <li>
+      <!--[onshow;block=li;when [vars.my_group] == 1;comm]-->  
+        <div class="btn-group dropup"> <a class="[vars.css_menu_heading_settings]" href="[conf.site_url]/admin/settings/general"> <i class="icon-wrench"></i> <span>[lang.lang_settings]</span></a> </div>
+      </li>
+      <!--WI_SETTINGS-->
+      <!--WI_LOGOUT-->
+      <li>
+        <div class="btn-group dropup"> <a class="[vars.css_menu_heading_logout]" href="[conf.site_url]/admin/login/logout"> <i class="icon-off"></i> <span>[lang.lang_logout]</span></a> </div>
+      </li>
+      <!--WI_LOGOUT-->
+    </ul>
+  </div>
+  <div class="clearfix"></div>
+</div>
